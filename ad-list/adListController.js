@@ -13,6 +13,8 @@ export async function adListController(adListElement) {
   try {
     ads = await getAd()
 
+    sendCustomEvent({isError: false, message: "los anincios se cargaron correctamente"}, adListElement)
+
     drawAds(ads,adListElement);
     hideSpinner()
 
@@ -28,4 +30,13 @@ function drawAds(ads,adListElement) {
     const newAdElement = buildAdView(element);
     adListElement.appendChild(newAdElement);
   });
+}
+
+function sendCustomEvent(message, adListElement){
+  const event = new CustomEvent("newNotification", {
+    detail: {
+      message: message
+    }
+  })
+  adListElement.dispatchEvent(event)
 }
