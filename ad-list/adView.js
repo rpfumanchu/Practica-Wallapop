@@ -1,6 +1,6 @@
 export function buildAdView(ad) {
   const newAdElement = document.createElement("div");
-  newAdElement.classList.add()
+  newAdElement.classList.add("ad")
   
   if (ad.state == true) {
     ad.state = "En venta"
@@ -9,11 +9,11 @@ export function buildAdView(ad) {
     ad.state = "Compro"
   }
   newAdElement.innerHTML = `
-  <div class="ad">
+  
   <p> articulo ${ad.name} ${ad.state} </p>
-    <div><img class="img" src="${ad.img}" alt="imagenes anuncios"></div>
-    <span class="span">${ad.tags}</span>
-  </div>`;
+  <img class="img" src="${ad.img}" alt="imagenes anuncios">
+  <span class="span">${ad.tags}</span>
+  `;
 
   return newAdElement
 
