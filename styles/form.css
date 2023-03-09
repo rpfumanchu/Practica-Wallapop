@@ -1,4 +1,4 @@
-.container {
+.container-singup {
   height: 310px;
   width: 15vw;
   position: fixed;
@@ -11,14 +11,14 @@
   background-color: whitesmoke;
 }
 
-.container .form-label {
+.container-singup .form-label {
   display: flex;
   justify-content: center;
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-.container .form-input {
+.container-singup .form-input {
   height: 30px;
   width: 12vw;
   font-size: 23px;
