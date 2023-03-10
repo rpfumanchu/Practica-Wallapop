@@ -19,3 +19,10 @@ export function buildAdView(ad) {
 
 }
 
+// function tagsUnicos(ad) {
+//   let result = ad.filter((item, index) => {
+//     return ad.indexOf(item) === index
+//   })
+//   console.log(result)
+// }
+

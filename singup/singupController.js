@@ -1,4 +1,5 @@
 import { pubSub } from "../pubSub.js";
+import { homePage } from "../utils/homePage.js";
 import { createUser } from "./singup.js";
 
 
@@ -21,18 +22,11 @@ export function singupController(singupElement) {
 
         try {
           await createUser(emailElement.value, passwordElement.value)
-          singupElement.reset();
           pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, {
             isError: false,
             message: "Usuario creado correctamente"
           });
-          return new Promise((resolve) => {
-            setTimeout(() => {
-              resolve(
-                window.location = "/"
-              )
-            }, 1000);
-          })
+          homePage()
           
         } catch (error) {
           pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, {
@@ -40,9 +34,12 @@ export function singupController(singupElement) {
             message: error.message,
           });
         }
+        singupElement.reset();
       }
       
     });
+
+ 
 
   function isEmailValid(email) {
     const mailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);

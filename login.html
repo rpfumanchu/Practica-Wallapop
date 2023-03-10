@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./notifications/notificationStyle.css">
+  <link rel="stylesheet" href="./styles/form.css">
+  <title>Login</title>
+</head>
+<body>
+
+  <section class="notifications"></section>
+
+  <form class="container-singup" id="logUser">
+    <label class="form-label" for="username">Email</label>
+    <input class="form-input" type="email" name="username" id="username" required>
+
+    <label class="form-label" for="password">Password</label>
+    <input class="form-input" type="password" name="password" id="password" minlength="6" required>
+
+    <button class="button" type="submit">Login</button>
+    <a class="links" href="./signup.html">¿Quieres crear una cuenta?</a>
+  </form>
+
+  <script type="module" src="./login/index.js"></script>
+  
+</body>
+</html>

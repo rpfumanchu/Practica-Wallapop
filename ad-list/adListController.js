@@ -14,7 +14,7 @@ export async function adListController(adListElement) {
 
   try {
     ads = await getAd();
-
+    
     //sendCustomEvent({isError: false, message: "los anincios se cargaron correctamente"}, adListElement)
     pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, {
       isError: false,
@@ -37,6 +37,7 @@ export async function adListController(adListElement) {
   } finally {
     hideSpinner();
   }
+  
 }
 
 function drawAds(ads, adListElement) {
@@ -46,6 +47,8 @@ function drawAds(ads, adListElement) {
   });
 }
 
+
+
 // function sendCustomEvent(message, adListElement){
 //   const event = new CustomEvent("newNotification", {
 //     detail: {
@@ -54,3 +57,14 @@ function drawAds(ads, adListElement) {
 //   })
 //   adListElement.dispatchEvent(event)
 // }
+
+// let data = [1,2,6,1,2,5,9,'33','33'];
+
+// const result = data.reduce((acc,item)=>{
+//   if(!acc.includes(item)){
+//     acc.push(item);
+//   }
+//   return acc;
+// },[])
+
+// console.log(result); //[1,2,6,5,9,'33']
