@@ -1,0 +1,80 @@
+body {
+  background-color: whitesmoke;
+  margin: 0px;
+  line-height: 25px;
+}
+
+body > * {
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+em {
+  font-style: italic;
+}
+
+b {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: 900;
+}
+
+h1 {
+  text-align: center;
+  padding: 0px 20px 0px 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+h3 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+ 
+  margin-bottom: 10px;
+
+}
+
+.separator {
+  margin: 20px 15%;
+}
+
+.separator div {
+  border-top: 3px solid var(--main-color);
+  
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 10px;
+  background-color: var(--main-color);
+  color: white;
+  position: static;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.texto {
+  text-align: justify;
+  text-justify: auto;
+  padding: 8px 10px 8px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}

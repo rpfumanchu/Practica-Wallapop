@@ -1,15 +1,16 @@
 import { adListController } from "./ad-list/adListController.js";
+import { navbarController } from "./navbar/navbarController.js";
 import { notificationController } from "./notifications/notificationController.js";
-import { userActtionsController } from "./user-actions/userActionsController.js";
+
 
 const notificationElement = document.querySelector(".notifications");
 const adListElement = document.querySelector(".adGrid");
-const userActionsElement = document.querySelector(".user-actions")
+const navbarElement = document.querySelector(".navbar")
 
 //const showMessage = notificationController(notificationElement);
 adListController(adListElement);
 notificationController(notificationElement)
-userActtionsController(userActionsElement)
+navbarController(navbarElement)
 
 
 // adListElement.addEventListener('newNotification', (event) => {

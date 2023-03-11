@@ -1,14 +1,28 @@
 .navbar {
+  height: 50px;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
   position: fixed;
   right: 0px;
   top: 0px;
   background-color: gainsboro;
+ 
+  
+  
   
 }
+
+  /* flex-direction: column;
+  
+  padding: 5px 10px;
+  position: fixed;
+  right: 7px;
+  top: 78px;
+  z-index: 9999; */
 /* .navbar {
   display: inline-flex;
   flex-direction: column;
@@ -44,7 +58,5 @@ ul.list {
 }
 
 h4 {
-  position: relative;
-  left: 45px;
   display: block;
 }
