@@ -16,13 +16,12 @@ export function singupController(createUserElement) {
     const passwordElement = createUserElement.querySelector("#password");
     const passwordConfirmElement = createUserElement.querySelector("#passwordConfirm");
     const emailElement = createUserElement.querySelector("#username");
-    const aliasElement = createUserElement.querySelector("#alias");
 
     if (isEmailValid(emailElement.value) &&
       isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
 
         try {
-          await createUser(emailElement.value, aliasElement.value, passwordElement.value)
+          await createUser(emailElement.value, passwordElement.value)
           pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, {
             isError: false,
             message: "Usuario creado correctamente"

@@ -10,7 +10,7 @@ export function buildNavbar() {
     <li class="list-item"><a href="./index.html" id="homeLink">Home</a></li>
     <li class="list-item"><a href="./login.html" id="loginLink">Login</a></li>
     <li class="list-item"><a href="./createUser.html" id="createUserLink">Signup</a></li>
-    <button id="closeSession">Cerrar sesión</button>
+    <button class="close-button" id="closeSession">Cerrar sesión</button>
   </ul>
   `;
   //return navbar
@@ -18,7 +18,8 @@ export function buildNavbar() {
 
 export function buildGreeting(userName) {
   const greetUser = document.createElement("p")
-  greetUser.textContent = `Has iniciado sesión ${userName}`
+  greetUser.classList.add("greet-user")
+  greetUser.innerHTML = `Has iniciado sesión:<p class="greet-user-p"> ${userName}</p>`
   return greetUser
 
 }
