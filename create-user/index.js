@@ -1,8 +1,8 @@
-import { singupController } from "./singupController.js";
+import { singupController } from "./createUserController.js";
 import {notificationController} from "../notifications/notificationController.js"
 
-const singupElement = document.querySelector("#createUser")
+const createUserElement = document.querySelector("#createUser")
 const notificationsElement = document.querySelector('.notifications')
 
 notificationController(notificationsElement)
-singupController(singupElement)
+singupController(createUserElement)

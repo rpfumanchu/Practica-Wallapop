@@ -1,6 +1,6 @@
 import { pubSub } from "../pubSub.js";
 import { homePage } from "../utils/homePage.js";
-import { createUser } from "./singup.js";
+import { createUser } from "./createUser.js";
 
 
 
@@ -8,20 +8,21 @@ import { createUser } from "./singup.js";
 //DONE Comprobar que las contraseñas sean iguales
 //DONE Comprobar que el email pasa por la regExp
 
-export function singupController(singupElement) {
+export function singupController(createUserElement) {
 
-  singupElement.addEventListener("submit", async (event) => {
+  createUserElement.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const passwordElement = singupElement.querySelector("#password");
-    const passwordConfirmElement = singupElement.querySelector("#passwordConfirm");
-    const emailElement = singupElement.querySelector("#username");
+    const passwordElement = createUserElement.querySelector("#password");
+    const passwordConfirmElement = createUserElement.querySelector("#passwordConfirm");
+    const emailElement = createUserElement.querySelector("#username");
+    const aliasElement = createUserElement.querySelector("#alias");
 
     if (isEmailValid(emailElement.value) &&
       isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
 
         try {
-          await createUser(emailElement.value, passwordElement.value)
+          await createUser(emailElement.value, aliasElement.value, passwordElement.value)
           pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, {
             isError: false,
             message: "Usuario creado correctamente"
@@ -34,7 +35,7 @@ export function singupController(singupElement) {
             message: error.message,
           });
         }
-        singupElement.reset();
+        createUserElement.reset();
       }
       
     });
