@@ -17,9 +17,7 @@ if (!adId) {
   window.location = "/"
 } else {
 
-  
-
-  const adDetailElement = document.querySelector("ad-detail");
+  const adDetailElement = document.querySelector(".ad-detail");
 
   adDetailController(adDetailElement, adId)
 

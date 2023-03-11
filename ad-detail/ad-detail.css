@@ -1,0 +1,59 @@
+/* .ad {
+  border: solid 1px lightgray;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.ad .ad-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+/* body {
+  background-image: url("https://thumbs.dreamstime.com/z/fondo-con-los-iconos-coloridos-de-las-compras-venta-al-por-menor-pago-en-l%C3%ADnea-106340894.jpg");
+} */
+
+.ad-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 90px;
+  margin-bottom: 10px;
+  
+  
+}
+
+.ad-detail .ad {
+  padding: 20px 0px 20px 0px;
+  border: 2px solid red;
+  background-color: whitesmoke;
+}
+
+/* .adGrid .ad .ad-ad {
+  display: flex;
+  flex-wrap: nowrap;
+} */
+
+.ad-detail .ad .img {
+  justify-items: center;
+  height: 350px;
+  width: 500px;
+  margin-bottom: 10px;
+}
+.ad-detail .ad .span {
+  font-size: 25px;
+  background-color: #74e17fac ;
+  border-radius: 6px;
+  padding: 2px 5px 0px 5px;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 25px;
+  padding: 0px 0px 20px 0px;
+  margin-bottom: 10px;
+  
+}
+

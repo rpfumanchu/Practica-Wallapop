@@ -23,13 +23,14 @@
   padding-top: 80px;
   padding-bottom: 40px;
   margin-bottom: 12px;
-  background-color: rgba(245, 245, 245, 0.356);
+  
   
 }
 
 .adGrid .ad {
   padding: 20px 0px 20px 0px;
   border: 2px solid red;
+  background-color: rgba(245, 245, 245, 0.356);
 }
 
 /* .adGrid .ad .ad-ad {
