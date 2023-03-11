@@ -9,10 +9,11 @@ export function buildAdView(ad) {
     ad.state = "Compro"
   }
   newAdElement.innerHTML = `
-  
+  <a href="/ad-detail.html?adId=${ad.id}">
   <p> articulo ${ad.name} ${ad.state} </p>
   <img class="img" src="${ad.img}" alt="imagenes anuncios">
   <span class="span">${ad.tags}</span>
+  </a>
   `;
 
   return newAdElement
