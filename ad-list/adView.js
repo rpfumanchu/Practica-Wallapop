@@ -1,13 +1,12 @@
+import { adStatusImage } from "../utils/adStatusImagen.js";
+
+
 export function buildAdView(ad) {
   const newAdElement = document.createElement("div");
   newAdElement.classList.add("ad")
   
-  if (ad.state == true) {
-    ad.state = "En venta"
-
-  }else {
-    ad.state = "Compro"
-  }
+  adStatusImage(ad);
+  
   newAdElement.innerHTML = `
   <a class="ad-link" href="/ad-detail.html?adId=${ad.id}">
   <p class="ad-p"> articulo ${ad.name} ${ad.state} </p>
@@ -18,6 +17,8 @@ export function buildAdView(ad) {
 
   return newAdElement
 
+
+ 
 }
 
 // function tagsUnicos(ad) {

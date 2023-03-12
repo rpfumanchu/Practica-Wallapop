@@ -3,8 +3,6 @@ import { navbarController } from "../navbar/navbarController.js";
 import { createAdController } from "./createAdController.js";
 
 
-
-
 const navbarElement = document.querySelector(".navbar")
 const notificationsElement = document.querySelector('.notifications')
 

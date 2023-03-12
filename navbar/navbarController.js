@@ -20,7 +20,7 @@ export function navbarController(navbarElement) {
     })
     
   } else {
-    const createAdLinkElement = navbarElement.querySelector('#createTweetLink')
+    const createAdLinkElement = navbarElement.querySelector('#createAdLink')
     createAdLinkElement.remove()
     closeSessionElement.remove()
   }
