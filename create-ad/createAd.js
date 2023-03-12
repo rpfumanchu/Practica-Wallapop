@@ -4,7 +4,7 @@ export async function createAd(adContent, adState, adPrice, separatingTag, adSta
     name: adContent,
     state: adState,
     price: adPrice,
-    tags: [separatingTag],
+    tags: separatingTag,
     stateUse: adStateUse,
     description: adDescription,
     img: adImg

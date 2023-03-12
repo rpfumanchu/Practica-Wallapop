@@ -2,7 +2,7 @@ import { decodeToken } from "../utils/decodeToken.js"
 import { buildGreeting, buildNavbar } from "./navbarView.js"
 
 export function navbarController(navbarElement) {
-  navbarElement.innerHTML = buildNavbar()
+ navbarElement.innerHTML = buildNavbar()
   const token = localStorage.getItem("token")
   const closeSessionElement = navbarElement.querySelector("#closeSession")
   if (token) {

@@ -8,7 +8,7 @@ import { buildAdView } from "./adView.js";
 //NOTE uso pubSub para gestionar posibles errores y notificaciones
 
 export async function adListController(adListElement) {
-  adListElement.inneHrTML = buildSpinnerView();
+  adListElement.inneHTML = buildSpinnerView();
 
   let ads = [];
 

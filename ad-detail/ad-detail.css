@@ -21,8 +21,8 @@
   text-align: center;
   padding-top: 90px;
   margin-bottom: 10px;
-  
-  
+
+
 }
 
 .ad-detail .ad {
@@ -42,9 +42,10 @@
   width: 500px;
   margin-bottom: 10px;
 }
+
 .ad-detail .ad .span {
   font-size: 25px;
-  background-color: #74e17fac ;
+  background-color: #74e17fac;
   border-radius: 6px;
   padding: 2px 5px 0px 5px;
   margin-bottom: 10px;
@@ -54,6 +55,16 @@
   font-size: 25px;
   padding: 0px 0px 20px 0px;
   margin-bottom: 10px;
-  
+
 }
 
+.delete-button {
+  background-color: #933d3d;
+  border-radius: 5px;
+  font-size: 23px;
+  color: white;
+  border: 0;
+  padding: 8px 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

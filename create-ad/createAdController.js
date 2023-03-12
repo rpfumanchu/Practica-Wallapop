@@ -1,9 +1,12 @@
 import { pubSub } from "../pubSub.js";
 import { homePage } from "../utils/homePage.js";
 import { createAd } from "./createAd.js";
+import { buildSpinnerView } from "../spinner/spinnerView.js";
+import { hideSpinner } from "../spinner/spinnerController.js";
 
 //DONE capturo el evento submit del formulario
 export function createAdController(createAdElement) {
+  hideSpinner();
 
   createAdElement.addEventListener("submit", async (event) => {
     //NOTE el evento submit de un formulari intentara validar esos datos en la parte servidora y no quiero eso
@@ -34,7 +37,6 @@ export function createAdController(createAdElement) {
         isError: true,
         message: error.message,
       });
-    }
+    } 
   })
-
 }
