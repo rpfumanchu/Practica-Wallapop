@@ -3,12 +3,12 @@ import { adDetailController } from "./adDetailController.js"
 import { navbarController } from "../navbar/navbarController.js";
 
 const navbarElement = document.querySelector(".navbar")
+const notificationsElement = document.querySelector('.notifications')
 
 //DONE leo la url el id de ad
 const params = new URLSearchParams(window.location.search)
 const adId = params.get("adId")
 
-const notificationsElement = document.querySelector('.notifications')
 notificationController(notificationsElement)
 navbarController(navbarElement)
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./navbar/navbar.css">
+  <link rel="stylesheet" href="./notifications/notificationStyle.css">
+  <link rel="stylesheet" href="./styles/form.css">
+  <title>Crear anuncio</title>
+</head>
+<body>
+
+  <nav class="navbar"></nav>
+
+  <section class="notifications"></section>
+
+  <form class="container-form" id="createAdForm">
+    <label class="form-label" for="name">Articulo</label>
+    <input class="form-input" type="text" name="name" id="name" required placeholder="Nombre del artículo">
+
+    <div class="form-label">
+      <label for="state-true">Vender</label>
+      <input class="form-input" type="radio" name="state" id="state-true" value="true" required>
+      <label for="state-false">Comprar</label>
+      <input class="form-input" type="radio" name="state" id="state-false" value="false" required>
+    </div>
+
+    <label class="form-label" for="price">Precio</label>
+    <input class="form-input" type="number" name="price" id="price" required>
+
+    <label class="form-label" for="tags">Tag</label>
+    <input class="form-input" type="text" name="tags" id="tags" required placeholder="Ejm:lifestyle">
+
+    <div class="form-label">
+      <label for="stateuse-new">Nuevo</label>
+      <input class="form-input" type="radio" name="stateuse" id="stateuse-new" value="nuevo" required>
+      <label for="stateuse-good">Buen estado</label>
+      <input class="form-input" type="radio" name="stateuse" id="stateuse-good" value="buen estado" required>
+      <label for="stateuse-used">Usado</label>
+      <input class="form-input" type="radio" name="stateuse" id="stateuse-used" value="usado" required>
+    </div>
+    <label class="form-label" for="description">Descripción</label>
+    <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+
+    <label class="form-label" for="img">img OPCIONAL:</label>
+    <input 
+    class="form-input" 
+    type="url" name="img" id="img"
+    placeholder="https://example.com"
+    pattern="https://.*" size="30"
+    >
+
+    <button class="button" type="submit">Crear Anuncio</button>
+
+  </form>
+
+  <script type="module" src="./create-ad/index.js"></script>
+  
+</body>
+</html>

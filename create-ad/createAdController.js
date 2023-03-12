@@ -1,0 +1,5 @@
+
+
+export function createAdController(createAdElement) {
+  
+}
