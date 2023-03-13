@@ -1,3 +1,4 @@
+
 export async function getAdDetail(adId) {
   const response = await fetch(`http://localhost:8000/api/ads/${adId}`);
 

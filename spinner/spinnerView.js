@@ -1,7 +1,7 @@
-export function buildSpinnerView() {
+export function buildSpinnerView(message) {
   return `
   
-    <div class="spinner"></div>
+    <div class="spinner" ${message}></div>
 
   `
 }

@@ -14,7 +14,7 @@
 .spinner {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 49%;
   z-index: 9999;
   background-color: gainsboro;
   display: flex;

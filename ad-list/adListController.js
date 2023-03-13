@@ -8,7 +8,7 @@ import { buildAdView } from "./adView.js";
 //NOTE uso pubSub para gestionar posibles errores y notificaciones
 
 export async function adListController(adListElement, page) {
-  adListElement.inneHTML = buildSpinnerView();
+  adListElement.inneHTML = buildSpinnerView("cargando");
 
   let ads = [];
 
@@ -43,6 +43,8 @@ export async function adListController(adListElement, page) {
       // crear boton pagina anterior
       // drawPreviousPaginationButton();
       // window.location.origin + ?page=x+1 = https://localhost:5000?page=2
+    }else {
+      prewButton.classList.add("hide-button")
     }
 
     if(page < payload.maxPage) {
@@ -51,6 +53,8 @@ export async function adListController(adListElement, page) {
       })
       // crear boton pagina siguiente
       // drawNextPaginationButton();
+    }else {
+      nextButton.classList.add("hide-button")
     }
 
   } catch (error) {
