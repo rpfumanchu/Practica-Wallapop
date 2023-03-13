@@ -1,0 +1,19 @@
+.container-button {
+  display: flex;
+  justify-content: space-around;
+  
+
+
+}
+
+.pagination-button {
+  width: 140px;
+  text-align: center;
+  background-color: #578d57;
+  border-radius: 5px;
+  font-size: 23px;
+  color: white;
+  border: 0;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}

@@ -1,16 +1,33 @@
 import { adListController } from "./ad-list/adListController.js";
 import { navbarController } from "./navbar/navbarController.js";
 import { notificationController } from "./notifications/notificationController.js";
-
+import { paginationButton } from "./pagination-buttons/paginationBottonController.js";
 
 const notificationElement = document.querySelector(".notifications");
-const adListElement = document.querySelector(".adGrid");
+const paginationButtonElement = document.querySelector(".pagination")
 const navbarElement = document.querySelector(".navbar")
 
 //const showMessage = notificationController(notificationElement);
-adListController(adListElement);
+
 notificationController(notificationElement)
 navbarController(navbarElement)
+paginationButton(paginationButtonElement)
+
+const params = new URLSearchParams(window.location.search);
+const page = parseInt(params.get("page")) || 1;
+
+if (!page) {
+  window.location = "/"
+} else {
+  const adListElement = document.querySelector(".adGrid");
+  adListController(adListElement, page);
+
+}
+
+
+
+
+
 
 
 // adListElement.addEventListener('newNotification', (event) => {
