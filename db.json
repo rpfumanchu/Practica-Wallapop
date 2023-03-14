@@ -1,0 +1,184 @@
+{
+  "users": [
+    {
+      "username": "rober@gmail.com",
+      "password": "$2b$10$McoT/2kMC.J1v6YtIPB3MOOF5qSq9qDFm/rxhR1OTrD9sO.OL/NCa",
+      "id": 1
+    },
+    {
+      "username": "ali@gmail.com",
+      "password": "$2b$10$McoT/2kMC.J1v6YtIPB3MOOF5qSq9qDFm/rxhR1OTrD9sO.OL/NCa",
+      "id": 2
+    }
+  ],
+  "ads": [
+    {
+      "name": "Play5",
+      "state": "Venta",
+      "price": "650",
+      "tags": "lifestyle",
+      "stateuse": "buen estado",
+      "description": "Consola de última generación, incluye mando y juego GT5.",
+      "img": "https://cdn.idealo.com/folder/Product/201490/2/201490239/s11_produktbild_gross_1/sony-playstation-5-ps5.jpg",
+      "userId": 1,
+      "updatedAt": "2023-03-14T11:18:34.828Z",
+      "id": 1
+    },
+    {
+      "name": "Xbox",
+      "state": "Compro",
+      "price": "400",
+      "tags": "lifestyle",
+      "stateuse": "buen estado",
+      "description": "Compro con un mando. Me desplazo a cualquier ubicación de Madrid.",
+      "img": "https://res.cloudinary.com/grover/image/upload/f_webp,q_auto/b_white,c_pad,dpr_2.0,h_500,w_520/f_auto,q_auto/v1599665929/e99kmldr95rf9p40k4pu.png",
+      "userId": 1,
+      "updatedAt": "2023-03-14T11:21:50.948Z",
+      "id": 2
+    },
+    {
+      "name": "Nike",
+      "state": "Venta",
+      "price": "90",
+      "tags": "casual",
+      "stateuse": "nuevo",
+      "description": "Zapatillas Nike sin usar, número 44",
+      "img": "https://resize.sprintercdn.com/f/550x550/products/0319947/nike-revolution-6_0319947_00_4_4044725947.jpg",
+      "userId": 1,
+      "updatedAt": "2023-03-14T11:23:04.666Z",
+      "id": 3
+    },
+    {
+      "name": "Silla Gamer",
+      "state": "Venta",
+      "price": "150",
+      "tags": "work",
+      "stateuse": "usado",
+      "description": "Un año de uso, silla gamer regulable en altura.",
+      "img": "https://media.trmuebles.com/product/silla-gaming-pro-800x800_C9k5T8M.jpg",
+      "userId": 1,
+      "updatedAt": "2023-03-14T11:25:33.530Z",
+      "id": 4
+    },
+    {
+      "name": "Reloj",
+      "state": "Venta",
+      "price": "500",
+      "tags": "lifestyle",
+      "stateuse": "nuevo",
+      "description": "Reloj sin abrir, si te apasiona el deporte este es tu reloj",
+      "img": "https://www.worten.es/i/869564e52fbc4c1f66b4beda5f01c03ff1f67c06.jpg",
+      "userId": 1,
+      "updatedAt": "2023-03-14T11:28:04.508Z",
+      "id": 5
+    },
+    {
+      "name": "Pc Gaming",
+      "state": "Compro",
+      "price": "800",
+      "tags": "lifestyle",
+      "stateuse": "buen estado",
+      "description": "Necesito un pc Gaming con no mas de 2 años de uso.",
+      "img": "https://d10mhq06fikmnr.cloudfront.net/catalog/product/h/u/hunter_rev2_os_rgb-min_4_1_1_1.jpg",
+      "userId": 1,
+      "updatedAt": "2023-03-14T11:30:32.877Z",
+      "id": 6
+    },
+    {
+      "name": "Apple",
+      "state": "Venta",
+      "price": "1100",
+      "tags": "mobile",
+      "stateuse": "nuevo",
+      "description": "iphone 13 pro max, sin abrir de su caja. Precio no negociable",
+      "img": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-12-black-2020?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1635202741000",
+      "userId": 2,
+      "updatedAt": "2023-03-14T11:33:17.964Z",
+      "id": 7
+    },
+    {
+      "name": "Oppo",
+      "state": "Compro",
+      "price": "450",
+      "tags": "mobile",
+      "stateuse": "buen estado",
+      "description": "Compro si el terminal esta liberado. Tlf:555 55 55, contactar por whatsapp.",
+      "img": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_92469692/fee_786_587_png",
+      "userId": 2,
+      "updatedAt": "2023-03-14T11:36:07.342Z",
+      "id": 8
+    },
+    {
+      "name": "Yamaha R7",
+      "state": "Venta",
+      "price": "9000",
+      "tags": "motor",
+      "stateuse": "buen estado",
+      "description": "Todas las revisiones al día, la trasferencia corre de mi cuenta.",
+      "img": "https://motos-b60.kxcdn.com/sites/default/files/yamaha-r7-2022.jpg",
+      "userId": 2,
+      "updatedAt": "2023-03-14T11:38:32.148Z",
+      "id": 9
+    },
+    {
+      "name": "Escritorio",
+      "state": "Compro",
+      "price": "120",
+      "tags": "work",
+      "stateuse": "buen estado",
+      "description": "Compro mesa en buen estado, el ancho máximo no puede superar el 1.10 metros",
+      "img": "https://img.furniture1.eu/v7/_im_/detailed/2947/2947616.jpg?w=900&h=675&p=fw",
+      "userId": 2,
+      "updatedAt": "2023-03-14T11:40:44.390Z",
+      "id": 10
+    },
+    {
+      "name": "Renault",
+      "state": "Venta",
+      "price": "15000",
+      "tags": "motor",
+      "stateuse": "usado",
+      "description": "60.000 Km y todas las revisiones al día. Precio negociable.",
+      "img": "https://images.coches.com/_vn_/renault/Clio/674171eb98d8b108125eca298fbd5735.jpg?p=cc_vn_medium",
+      "userId": 2,
+      "updatedAt": "2023-03-14T11:42:51.529Z",
+      "id": 11
+    },
+    {
+      "name": "The last of us II",
+      "state": "Compro",
+      "price": "30",
+      "tags": "lifestyle",
+      "stateuse": "buen estado",
+      "description": "Contactar por whatsapp, tlf: 555 22 66 55",
+      "img": "",
+      "userId": 2,
+      "updatedAt": "2023-03-14T11:44:46.123Z",
+      "id": 12
+    },
+    {
+      "name": "Tablet",
+      "state": "Compro",
+      "price": "70",
+      "tags": "lifestyle",
+      "stateuse": "buen estado",
+      "description": "Android 5.1 o superior. Contactar en el tlf:666 55 44",
+      "img": "",
+      "userId": 1,
+      "updatedAt": "2023-03-14T11:47:02.586Z",
+      "id": 13
+    },
+    {
+      "name": "Cascos",
+      "state": "Venta",
+      "price": "30",
+      "tags": "lifestyle",
+      "stateuse": "buen estado",
+      "description": "Poco uso, ideal para consolas y pc.",
+      "img": "",
+      "userId": 1,
+      "updatedAt": "2023-03-14T11:48:38.126Z",
+      "id": 14
+    }
+  ]
+}
