@@ -3,6 +3,8 @@
 //?_page=1&_limit=3
 //?tags=motor
 
+
+
  export async function getAd(page, limit = 4) {
 
    const adUrl = `http://127.0.0.1:8000/api/ads?_page=${page}&_limit=${limit}`;
@@ -12,6 +14,11 @@
    const count = response.headers.get("X-Total-Count");
    const maxPage = count / limit;
    
+   return { ads: ad, total: count, maxPage: maxPage };
+  }
+
+ 
+  
   //  const body = document.getElementsByTagName("body")[0];
 
   //  if(page > 1) {
@@ -42,6 +49,3 @@
   //   });
   //   body.append(button);
   //  }
-
-   return { ads: ad, total: count, maxPage: maxPage };
- }

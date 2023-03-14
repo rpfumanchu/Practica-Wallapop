@@ -21,7 +21,7 @@ export const adDetailController = async (adDetailElement, adId) => {
     });
   }
 
-  //DONE Añado evento click al boton
+  //DONE Añado evento click al boton de borrar anuncio
   function deleteAdButton(adDetailElement, ad) {
     const token = localStorage.getItem("token");
     const deleteButtonElement = adDetailElement.querySelector("#deleteAd");

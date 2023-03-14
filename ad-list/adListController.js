@@ -9,7 +9,7 @@ import { buildAdView } from "./adView.js";
 
 export async function adListController(adListElement, page) {
   adListElement.inneHTML = buildSpinnerView("cargando");
-
+  
   let ads = [];
 
   try {
@@ -40,9 +40,7 @@ export async function adListController(adListElement, page) {
       prewButton.addEventListener("click", () => {
         window.location.href = window.location.origin + "?page=" + (page - 1); 
       })
-      // crear boton pagina anterior
-      // drawPreviousPaginationButton();
-      // window.location.origin + ?page=x+1 = https://localhost:5000?page=2
+   
     }else {
       prewButton.classList.add("hide-button")
     }
@@ -51,8 +49,7 @@ export async function adListController(adListElement, page) {
       nextButton.addEventListener("click", () => {
         window.location.href = window.location.origin + "?page=" + (page + 1); 
       })
-      // crear boton pagina siguiente
-      // drawNextPaginationButton();
+     
     }else {
       nextButton.classList.add("hide-button")
     }
@@ -65,8 +62,9 @@ export async function adListController(adListElement, page) {
   } finally {
     hideSpinner();
   }
-  
 }
+
+
 
 function drawAds(payload, adListElement) {
   payload.ads.forEach((element) => {
@@ -74,6 +72,45 @@ function drawAds(payload, adListElement) {
     adListElement.appendChild(newAdElement);
   });
 }
+
+
+// let adsMap = payloadtag.tagstotal.map(item => {
+  //   return [item.tags, item]
+  // })
+  // const adMapArr = new Map(adsMap);
+  // let tagsUnicos = [...adMapArr.values()]
+
+  //console.log(tagsUnicos)
+  //payloadtag.tagstotal.forEach((element) => {
+    //element.tags
+    //console.log(element.tags)
+    //const array = [element.tags.flat()]
+    //console.log(array)
+    //const array = [].concat(element.tags)
+    //const array = payloadtag.tagstotal
+    //const arrayJ = [JSON.stringify(array)]
+    //console.log(array)
+
+    // let adMap = array.map(item => {
+    //   return [item.tags,item]
+    // })
+    //console.log(adMap)
+  
+    // const adMapArr = new Map(adMap)
+    // const tagsUnicos = [...adMapArr.values()]
+    // console.log(tagsUnicos)
+    
+    //  let result = arrayJ.filter((item,index)=>{
+      //    return arrayJ.indexOf(item) === index;
+      //  })
+      // console.log(result);
+      //const dataTags = new Set(array)
+      
+      //let resultTags = [...dataTags]
+      //console.log(resultTags)
+    //})
+    
+
 
 
 

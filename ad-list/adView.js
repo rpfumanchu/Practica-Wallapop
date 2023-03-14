@@ -16,9 +16,6 @@ export function buildAdView(ad) {
   `;
 
   return newAdElement
-
-
- 
 }
 
 // function tagsUnicos(ad) {
