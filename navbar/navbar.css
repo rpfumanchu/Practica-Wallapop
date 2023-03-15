@@ -7,9 +7,9 @@
   align-items: center;
   padding: 5px 10px;
   position: fixed;
-  right: 0px;
   top: 0px;
   background-color: gainsboro;
+  z-index: 9999;
  
 }
 
@@ -25,7 +25,7 @@
 }
 
 .list-item > a:hover {
-  background-color: #1864dde9;
+  background-color: #13c1ac;
   color: white;
 }
 
@@ -58,4 +58,4 @@ h4 {
   background-color: red;
   font-size: 20px;
   color: white;
-}
+} 

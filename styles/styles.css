@@ -1,7 +1,17 @@
-body {
+/* body {
   background-color: whitesmoke;
   margin: 0px;
   line-height: 25px;
+} */
+
+body  {
+  position: relative;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-left: 3px;
+  margin-bottom: 10px;
+  padding-bottom: 3.5em;
+  min-height: 100vh;
+  background-color: whitesmoke;
 }
 
 body > * {
@@ -52,24 +62,7 @@ h3 {
   
 }
 
-.title {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0px 10px 0px;
-  margin-bottom: 10px;
-  background-color: var(--main-color);
-  color: white;
-  position: static;
-}
 
-.logo {
-  height: 50px;
-  width: 50px;
-  padding: 5px;
-  border-radius: 15px;
-}
 
 .texto {
   text-align: justify;
@@ -78,3 +71,4 @@ h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
+

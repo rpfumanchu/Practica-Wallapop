@@ -1,9 +1,5 @@
 .container-form {
   width: 15vw;
-  /* display: flex; */
-  /* flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center; */
   position: fixed;
   left: 40%;
   top: 35%;
