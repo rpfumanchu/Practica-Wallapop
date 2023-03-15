@@ -1,0 +1,30 @@
+.adtags  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 15px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  margin-bottom: 12px;
+}
+
+.adtags .tags  {
+  display: block;
+  justify-content: center;
+  flex-direction: column;
+  
+ 
+}
+
+.tags-button {
+  text-align: center;
+  background-color:#13c1ac;
+  border-radius: 5px;
+  font-size: 18px;
+ 
+  border: 0;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
