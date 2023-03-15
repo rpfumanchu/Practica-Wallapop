@@ -17,6 +17,6 @@ export async function createUser(email, password) {
 
   //NOTE Gestiono la respuesta
   if (!response.ok) {
-    throw new Error("Error, no se pudo crear usuario");
+    throw new Error("Error, no se pudo crear cuenta, usuario ya existe");
   }
 }

@@ -1,70 +1,57 @@
-import { pubSub } from "../pubSub.js";
+//import { pubSub } from "../pubSub.js";
 import { hideSpinner } from "../spinner/spinnerController.js";
-import { buildSpinnerView } from "../spinner/spinnerView.js";
+import { notification } from "../utils/notifications.js";
 import { getAd } from "./ad.js";
 import { buildAdView } from "./adView.js";
+
 
 //DONE Muestro todos los anuncios 
 //NOTE uso pubSub para gestionar posibles errores y notificaciones
 
 export async function adListController(adListElement, page) {
-  adListElement.inneHTML = buildSpinnerView("cargando");
   
   let ads = [];
 
   try {
-
-    // const params = new URLSearchParams(window.location.search);
-    // const page = parseInt(params.get("page")) || 1;
-
     const payload = await getAd(page);
     
-
-
-    //sendCustomEvent({isError: false, message: "los anincios se cargaron correctamente"}, adListElement)
-    pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, {
-      isError: false,
-      message: "los anuncios se cargaron correctamente",
-    });
+    notification(false, "Los anuncios se cargaron correctamente")
 
     if (payload.ads.length > 0) {
       drawAds(payload, adListElement);
     } else {
-      pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, {
-        isError: true,
-        message: "No hay resultados disponibles",
-      });
+      notification(true, "No hay resultados disponibles");
     }
 
-    if(page > 1) {
-      prewButton.addEventListener("click", () => {
-        window.location.href = window.location.origin + "?page=" + (page - 1); 
-      })
-   
-    }else {
-      prewButton.classList.add("hide-button")
-    }
-
-    if(page < payload.maxPage) {
-      nextButton.addEventListener("click", () => {
-        window.location.href = window.location.origin + "?page=" + (page + 1); 
-      })
-     
-    }else {
-      nextButton.classList.add("hide-button")
-    }
+    pagination(page, payload);
 
   } catch (error) {
-    pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, {
-      isError: true,
-      message: "No hemos podido cargar los anuncios",
-    });
+    notification(true, "No hemos podido cargar los anuncios");
   } finally {
-    hideSpinner();
+    hideSpinner(adListElement);
   }
 }
 
 
+function pagination(page, payload) {
+  if (page > 1) {
+    prewButton.addEventListener("click", () => {
+      window.location.href = window.location.origin + "?page=" + (page - 1);
+    });
+
+  } else {
+    prewButton.classList.add("hide-button");
+  }
+
+  if (page < payload.maxPage) {
+    nextButton.addEventListener("click", () => {
+      window.location.href = window.location.origin + "?page=" + (page + 1);
+    });
+
+  } else {
+    nextButton.classList.add("hide-button");
+  }
+}
 
 function drawAds(payload, adListElement) {
   payload.ads.forEach((element) => {
@@ -74,62 +61,3 @@ function drawAds(payload, adListElement) {
 }
 
 
-// let adsMap = payloadtag.tagstotal.map(item => {
-  //   return [item.tags, item]
-  // })
-  // const adMapArr = new Map(adsMap);
-  // let tagsUnicos = [...adMapArr.values()]
-
-  //console.log(tagsUnicos)
-  //payloadtag.tagstotal.forEach((element) => {
-    //element.tags
-    //console.log(element.tags)
-    //const array = [element.tags.flat()]
-    //console.log(array)
-    //const array = [].concat(element.tags)
-    //const array = payloadtag.tagstotal
-    //const arrayJ = [JSON.stringify(array)]
-    //console.log(array)
-
-    // let adMap = array.map(item => {
-    //   return [item.tags,item]
-    // })
-    //console.log(adMap)
-  
-    // const adMapArr = new Map(adMap)
-    // const tagsUnicos = [...adMapArr.values()]
-    // console.log(tagsUnicos)
-    
-    //  let result = arrayJ.filter((item,index)=>{
-      //    return arrayJ.indexOf(item) === index;
-      //  })
-      // console.log(result);
-      //const dataTags = new Set(array)
-      
-      //let resultTags = [...dataTags]
-      //console.log(resultTags)
-    //})
-    
-
-
-
-
-// function sendCustomEvent(message, adListElement){
-//   const event = new CustomEvent("newNotification", {
-//     detail: {
-//       message: message
-//     }
-//   })
-//   adListElement.dispatchEvent(event)
-// }
-
-// let data = [1,2,6,1,2,5,9,'33','33'];
-
-// const result = data.reduce((acc,item)=>{
-//   if(!acc.includes(item)){
-//     acc.push(item);
-//   }
-//   return acc;
-// },[])
-
-// console.log(result); //[1,2,6,5,9,'33']

@@ -1,36 +1,30 @@
 import { pubSub } from "../pubSub.js";
 import { buildNotificationView } from "./notificationView.js";
 
-
-//DONE Mostrar un popup con distintos mensaje y color que al hacer click en el boton desaparece
+//DONE Mostrar un popup con distintos mensaje y color que desaparece a los 3 segundos
 //NOTE devuelve una función para evitar dependencia
 
 export function notificationController(notificationsElement) {
-
   function showMessage(detail) {
-    if(detail.isError) {
+    if (detail.isError) {
       notificationsElement.classList.add("popup-red");
-    }else {
+    } else {
       notificationsElement.classList.add("popup-blue");
     }
 
     notificationsElement.innerHTML = buildNotificationView(detail.message);
 
-    const endPopupElement = notificationsElement.querySelector("#end-popup") 
 
-    endPopupElement.addEventListener("click", () => {
-      deleteNotification(notificationsElement)
-    })
-  }
-
-  function deleteNotification(notificationsElement) {
-    notificationsElement.innerHTML = ""
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(notificationsElement.classList.add("hide"));
+      }, 3000);
+    });
   }
 
   pubSub.subscribe(pubSub.TOPICS.SHOW_NOTIFICATION, (message) => {
-    showMessage(message)
-  })
+    showMessage(message);
+  });
 
-  return showMessage
-
+  return showMessage;
 }

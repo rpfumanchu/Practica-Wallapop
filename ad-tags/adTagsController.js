@@ -13,7 +13,7 @@ export async function adTags(adTagsElement, tag) {
   //adTagsElement.innerHTML = buildTagButton(tags)
   drawAds(payload, adTagsElement)
   pintar(array, adTagsElement);
-  array = (JSON.stringify(array))
+  //array = (JSON.stringify(array))
   console.log(array)
   //console.log(Object.values(array));
 

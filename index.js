@@ -2,13 +2,16 @@ import { adListController } from "./ad-list/adListController.js";
 import { navbarController } from "./navbar/navbarController.js";
 import { notificationController } from "./notifications/notificationController.js";
 import { paginationButton } from "./pagination-buttons/paginationBottonController.js";
+import {spinnerController, hideSpinner} from "./spinner/spinnerController.js"
 
+const spinnerElement = document.querySelector("#spinner");
 const notificationElement = document.querySelector(".notifications");
 const paginationButtonElement = document.querySelector(".pagination")
 const navbarElement = document.querySelector(".navbar")
 
 //const showMessage = notificationController(notificationElement);
-
+spinnerController(spinnerElement)
+hideSpinner(spinnerElement)
 notificationController(notificationElement)
 navbarController(navbarElement)
 paginationButton(paginationButtonElement)
