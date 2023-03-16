@@ -5,6 +5,8 @@ import { navbarController } from "./navbar/navbarController.js";
 import { notificationController } from "./notifications/notificationController.js";
 import { paginationButton } from "./pagination-buttons/paginationBottonController.js";
 import {spinnerController, hideSpinner} from "./spinner/spinnerController.js"
+import { adFindController } from "./ad-finder/adFinderController.js";
+
 
 
 const spinnerElement = document.querySelector("#spinner");
@@ -13,6 +15,7 @@ const paginationButtonElement = document.querySelector(".pagination")
 const navbarElement = document.querySelector(".navbar")
 const titleElement =document.querySelector("#title")
 const footerElement = document.querySelector("#footer")
+const adFinderElement = document.querySelector("#find")
 
 //const showMessage = notificationController(notificationElement);
 spinnerController(spinnerElement)
@@ -22,6 +25,7 @@ navbarController(navbarElement)
 titleController(titleElement)
 paginationButton(paginationButtonElement)
 footerController(footerElement)
+adFindController(adFinderElement)
 
 const params = new URLSearchParams(window.location.search);
 const page = parseInt(params.get("page")) || 1;

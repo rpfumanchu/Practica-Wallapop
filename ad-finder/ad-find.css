@@ -1,0 +1,39 @@
+.ad-find  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 15px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  margin-bottom: 12px;
+}
+
+
+
+.find {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+
+  position: relative;
+  top: 70px;
+  
+  
+
+
+}
+
+.find input {
+  font-size: 25px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: whitesmoke;
+
+}
+
+.hide {
+  display: none;
+}

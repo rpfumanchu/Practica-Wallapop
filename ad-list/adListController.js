@@ -1,8 +1,10 @@
 //import { pubSub } from "../pubSub.js";
 import { hideSpinner } from "../spinner/spinnerController.js";
 import { notification } from "../utils/notifications.js";
+import { pagination } from "../utils/pagination.js";
 import { getAd } from "./ad.js";
-import { buildAdView } from "./adView.js";
+import { buildAdView} from "./adView.js";
+
 
 
 //DONE Muestro todos los anuncios 
@@ -14,44 +16,64 @@ export async function adListController(adListElement, page) {
 
   try {
     const payload = await getAd(page);
+    //const adTotal = await adFinder()
+    
     
     notification(false, "Los anuncios se cargaron correctamente")
+    
+    pagination(page, payload);
+  
 
-    if (payload.ads.length > 0) {
+    if (payload.ads.length > 0)  {
       drawAds(payload, adListElement);
+    
+      //addInputListenerToFilter(adListElement);
+      
     } else {
       notification(true, "No hay resultados disponibles");
     }
-
-    pagination(page, payload);
 
   } catch (error) {
     notification(true, "No hemos podido cargar los anuncios");
   } finally {
     hideSpinner(adListElement);
   }
+
+  
+  
 }
 
+//  function addInputListenerToFilter(adListElement) {
 
-function pagination(page, payload) {
-  if (page > 1) {
-    prewButton.addEventListener("click", () => {
-      window.location.href = window.location.origin + "?page=" + (page - 1);
-    });
+//   //console.log(adTotal)
+  
+//   adListElement.querySelector("#filter_list_ad").addEventListener("input", async ev =>  {
+//       const text = ev.target.value.toLowerCase();
+//       const adTotal = await adFinder()
+//             drawList( adTotal);
 
-  } else {
-    prewButton.classList.add("hide-button");
-  }
+//       adListElement.querySelectorAll("li").forEach(  el => {
+//           // console.log("Filtrando el", el, text);
+        
+//           el.classList.add("hide");
 
-  if (page < payload.maxPage) {
-    nextButton.addEventListener("click", () => {
-      window.location.href = window.location.origin + "?page=" + (page + 1);
-    });
+//           if(!text) {
+            
+//               // console.log("No hay texto, mostrando elemento", el);
+//               //el.classList.add("hide");
+//               el.classList.remove("hide");
+//           } else {
+//               const content = el.dataset.content;
+//               if(content.includes(text)) {
+                
+//                   // console.log("El contenido incluye el texto, mostrando elemento", el);
+//                   el.classList.remove("hide");
+//               }
+//           }
+//       })
+//   })
+// }
 
-  } else {
-    nextButton.classList.add("hide-button");
-  }
-}
 
 function drawAds(payload, adListElement) {
   payload.ads.forEach((element) => {

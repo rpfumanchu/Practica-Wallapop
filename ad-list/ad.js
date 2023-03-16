@@ -17,6 +17,15 @@
    return { ads: ad, total: count, maxPage: maxPage };
   }
 
+  // export async function adFinder() {
+  //   const response = await fetch("http://127.0.0.1:8000/api/ads")
+
+  //   const adTotal = await response.json();
+
+  //   return adTotal
+
+  // }
+
  
   
   //  const body = document.getElementsByTagName("body")[0];
