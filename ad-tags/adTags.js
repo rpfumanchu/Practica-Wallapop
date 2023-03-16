@@ -12,3 +12,4 @@ export async function getAdTags(tag) {
   return { ads: ad, tagstotal: tags };
 }
 //total: count, maxPage: maxPage,
+

@@ -1,10 +1,9 @@
 //import { pubSub } from "../pubSub.js";
 import { hideSpinner } from "../spinner/spinnerController.js";
+import { drawAds } from "../utils/drawAds.js";
 import { notification } from "../utils/notifications.js";
 import { pagination } from "../utils/pagination.js";
 import { getAd } from "./ad.js";
-import { buildAdView} from "./adView.js";
-
 
 
 //DONE Muestro todos los anuncios 
@@ -17,14 +16,10 @@ export async function adListController(adListElement, page) {
   try {
     const payload = await getAd(page);
     //const adTotal = await adFinder()
-    
-    
-    notification(false, "Los anuncios se cargaron correctamente")
-    
     pagination(page, payload);
-  
-
+    
     if (payload.ads.length > 0)  {
+      notification(false, "Los anuncios se cargaron correctamente")
       drawAds(payload, adListElement);
     
       //addInputListenerToFilter(adListElement);
@@ -39,7 +34,6 @@ export async function adListController(adListElement, page) {
     hideSpinner(adListElement);
   }
 
-  
   
 }
 
@@ -75,11 +69,6 @@ export async function adListController(adListElement, page) {
 // }
 
 
-function drawAds(payload, adListElement) {
-  payload.ads.forEach((element) => {
-    const newAdElement = buildAdView(element);
-    adListElement.appendChild(newAdElement);
-  });
-}
+
 
 
