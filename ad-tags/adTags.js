@@ -1,15 +1,16 @@
 //&_page=${page}&_limit=${limit}
 //, limit = 4
-export async function getAdTags(tag) {
-  const response = await fetch(`http://127.0.0.1:8000/api/ads?tags=${tag}`);
-  const responseTags = await fetch("http://127.0.0.1:8000/api/ads?ads=tags")
-  
-  const tags = await responseTags.json()
-  const ad = await response.json();
-  const count = response.headers.get("X-Total-Count");
-  //const maxPage = count / limit;
+export async function getAdTags(tag, page, limit = 2) {
+  const responseFilteredAds = await fetch(`http://127.0.0.1:8000/api/ads?tags=${tag}&_page=${page}&_limit=${limit}`);
+  const filteredAds = await responseFilteredAds.json();
 
-  return { ads: ad, tagstotal: tags };
+  const responseAllAds = await fetch("http://127.0.0.1:8000/api/ads")
+  const allAds = await responseAllAds.json()
+
+  const count = responseFilteredAds.headers.get("X-Total-Count");
+  const maxPage = count / limit;
+
+  return { ads: filteredAds, tagstotal: allAds, total: count, maxPage: maxPage };
 }
 //total: count, maxPage: maxPage,
 

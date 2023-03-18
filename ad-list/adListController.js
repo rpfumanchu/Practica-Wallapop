@@ -9,14 +9,12 @@ import { getAd } from "./ad.js";
 //DONE Muestro todos los anuncios 
 //NOTE uso pubSub para gestionar posibles errores y notificaciones
 
-export async function adListController(adListElement, page) {
+export async function adListController(adListElement, spinnerElement, page) {
   
-  let ads = [];
-
   try {
     const payload = await getAd(page);
     //const adTotal = await adFinder()
-    pagination(page, payload);
+    pagination(payload.maxPage);
     
     if (payload.ads.length > 0)  {
       notification(false, "Los anuncios se cargaron correctamente")
@@ -31,7 +29,7 @@ export async function adListController(adListElement, page) {
   } catch (error) {
     notification(true, "No hemos podido cargar los anuncios");
   } finally {
-    hideSpinner(adListElement);
+    hideSpinner(spinnerElement);
   }
 
   

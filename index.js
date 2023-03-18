@@ -7,8 +7,6 @@ import { paginationButton } from "./pagination-buttons/paginationBottonControlle
 import {spinnerController, hideSpinner} from "./spinner/spinnerController.js"
 import { adFindController } from "./ad-finder/adFinderController.js";
 
-
-
 const spinnerElement = document.querySelector("#spinner");
 const notificationElement = document.querySelector(".notifications");
 const paginationButtonElement = document.querySelector(".pagination")
@@ -16,6 +14,7 @@ const navbarElement = document.querySelector(".navbar")
 const titleElement =document.querySelector("#title")
 const footerElement = document.querySelector("#footer")
 const adFinderElement = document.querySelector("#find")
+const adListElement = document.querySelector(".adGrid")
 
 //const showMessage = notificationController(notificationElement);
 spinnerController(spinnerElement)
@@ -25,7 +24,6 @@ navbarController(navbarElement)
 titleController(titleElement)
 paginationButton(paginationButtonElement)
 footerController(footerElement)
-adFindController(adFinderElement)
 
 const params = new URLSearchParams(window.location.search);
 const page = parseInt(params.get("page")) || 1;
@@ -33,16 +31,9 @@ const page = parseInt(params.get("page")) || 1;
 if (!page) {
   window.location = "/"
 } else {
-  const adListElement = document.querySelector(".adGrid");
-  adListController(adListElement, page);
-
+  adListController(adListElement, spinnerElement, page);
+  adFindController(adFinderElement, adListElement, paginationButtonElement);
 }
-
-
-
-
-
-
 
 // adListElement.addEventListener('newNotification', (event) => {
 //   console.log('He recibido el evento!!!! ', event.detail.message);

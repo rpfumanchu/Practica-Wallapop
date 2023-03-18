@@ -21,14 +21,13 @@ titleController(titleElement)
 paginationButton(paginationButtonElement)
 footerController(footerElement)
 
-
-
 const params = new URLSearchParams(window.location.search);
-const tags = params.get("tags") ;
+const tags = params.get("tags");
+const page = parseInt(params.get("page")) || 1;
 
-
-  const adTagsElement = document.querySelector(".adtags");
-  adTags(adTagsElement, tags);
+const adListElement = document.querySelector(".adList");
+const adTagsElement = document.querySelector(".adtags");
+adTags(adTagsElement, adListElement, page, tags);
 
 
 //const adTagsElement = document.querySelector(".tags")

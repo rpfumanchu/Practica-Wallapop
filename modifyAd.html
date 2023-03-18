@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/form.css">
+</head>
+<body>
+
+  <form class="container-form" id="modifyAdForm" name="dataForm">
+
+    <input class="form-input" type="text" name="id" id="id" hidden />
+    <input class="form-input" type="text" name="updatedAt" id="updatedAt" hidden />
+    <input class="form-input" type="text" name="userId" id="userId" hidden />
+
+    <label class="form-label" for="name">Articulo</label>
+    <input class="form-input" type="text" name="name" id="modify-name" placeholder="Nombre del artículo">
+
+    <div class="form-label">
+      <label for="state-true">Vender</label>
+      <input class="form-input" type="radio" name="state" id="modify-state-true" value="Venta" >
+      <label for="state-false">Comprar</label>
+      <input class="form-input" type="radio" name="state" id="modify-state-false" value="Compro" >
+    </div>
+
+    <label class="form-label" for="price">Precio</label>
+    <input class="form-input" type="number" name="price" id="modify-price" >
+
+    <label class="form-label" for="tags">Tag</label>
+    <input class="form-input" type="text" name="tags" id="modify-tags"  placeholder="Ejm:mobile,motor">
+    <small>Los tags deben ir separados por comas</small>
+
+    <div class="form-label">
+      <label for="stateuse-new">Nuevo</label>
+      <input class="form-input" type="radio" name="stateuse" id="modify-stateuse-new" value="nuevo" >
+      <label for="stateuse-good">Buen estado</label>
+      <input class="form-input" type="radio" name="stateuse" id="modify-stateuse-good" value="buen estado" >
+      <label for="stateuse-used">Usado</label>
+      <input class="form-input" type="radio" name="stateuse" id="modify-stateuse-used" value="usado" >
+    </div>
+    <label class="form-label" for="description">Descripción</label>
+    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+    <label class="form-label" for="img">img OPCIONAL:</label>
+    <input class="form-input" type="url" name="img" id="modify-img" placeholder="https://example.com" pattern="https://.*"
+      size="30">
+
+    <button class="button" type="submit">Modificar Anuncio</button>
+    
+
+
+
+  </form>
+
+  
+
+  <script type="module" src="./ad-modify/index.js"></script>
+  
+</body>
+</html>

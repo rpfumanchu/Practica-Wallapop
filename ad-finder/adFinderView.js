@@ -1,32 +1,33 @@
 import { adStatusImage } from "../utils/adStatusImagen.js";
 
-export function drawList(adListElement,  adTotal) {
+export function drawList(adFindElement,  adTotal) {
   //const newAdElement = document.createElement("div");
-  
-  adListElement.innerHTML = `
-     
-     <div class="find">
-     <label  for="filter_list_ad"></label>
-      <input placeholder="Buscar anuncio..." id="filter_list_ad" />
-     </div>
-      <div class="ad-find">
-      
-          ${createListItems(adTotal)}
-      </div>`;
+ 
+  adFindElement.innerHTML = `
+    <div class="find">
+        <label for="filter_list_ad"></label>
+        <input placeholder="Buscar anuncio..." id="filter_list_ad" />
+    </div>
+    <div class="ad-find">
+        ${createListItems(adTotal)}
+    </div>`;
 }
 
 function createListItems(adTotal) {
-  
-  return adTotal.map(el => `
-  
-      <div id="li" class="hide" data-content="${Object.values(el).join("||").toLowerCase()}">
+
+  return adTotal.map(ad => {
+    adStatusImage(ad);
+    const html = `
+      <div class="finder-item hide" data-name="${ad.name?.toLowerCase() || "undefined"}">
           <div class="ad">
-            <a class="ad-link" href="/ad-detail.html?adId=${el.id}">
-            <p class="ad-p"> articulo ${el.name} ${el.state} </p>
-            <img class="img" src="${el.img}" alt="imagenes anuncios">
-            <span class="span">${el.tags}</span>
+            <a class="ad-link" href="/ad-detail.html?adId=${ad.id}" />
+              <p class="ad-p"> articulo ${ad.name} ${ad.state} </p>
+              <img class="img" src="${ad.img}" alt="imagenes anuncios" />
+              <span class="span">${ad.tags}</span>
             </a>  
           </div>
       </div>
-  `).join("");
+    `;
+    return html;
+  }).join("");
 }

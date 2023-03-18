@@ -1,18 +1,23 @@
-export function pagination(page, payload) {
-  if (page > 1) {
-    prewButton.addEventListener("click", () => {
-      window.location.href = window.location.origin + "?page=" + (page - 1);
-    });
+export function pagination(maxPage) {
 
+  const url = window.location.origin + window.location.pathname;
+  const params = new URLSearchParams(window.location.search); // URLSearchParams
+  const page = parseInt(params.get("page")) || 1;
+
+  if (page > 1) {
+    prevButton.addEventListener("click", () => {
+      params.set("page", page - 1);
+      window.location.href = `${url}?${params.toString()}`;
+    });
   } else {
-    prewButton.classList.add("hide-button");
+    prevButton.classList.add("hide-button");
   }
 
-  if (page < payload.maxPage) {
+  if (page < maxPage) {
     nextButton.addEventListener("click", () => {
-      window.location.href = window.location.origin + "?page=" + (page + 1);
+      params.set("page", page + 1);
+      window.location.href = `${url}?${params.toString()}`;
     });
-
   } else {
     nextButton.classList.add("hide-button");
   }

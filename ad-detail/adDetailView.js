@@ -14,7 +14,13 @@ export function buildAdDetail(ad) {
     <div>
       <button class="delete-button" id="deleteAd">Borrar Anuncio</button>
     </div>
+    <div>
+      <a class="modifyAd-button" id="btn-modifyAd" href="/modifyAd.html?adId=${ad.id}">
+        <label>modificar</label>
+      </a>
+    </div>
   </div>
 </div>
-`;
-}
+      `;
+    }
+    //<button class="modifyAd-button" id="btn-modifyAd" >Modificar Anuncio</button>
