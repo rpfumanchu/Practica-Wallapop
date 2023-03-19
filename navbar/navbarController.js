@@ -1,5 +1,6 @@
 import { decodeToken } from "../utils/decodeToken.js"
 import { buildGreeting, buildNavbar } from "./navbarView.js"
+import { notification } from "../utils/notifications.js";
 
 export function navbarController(navbarElement) {
  navbarElement.innerHTML = buildNavbar()
@@ -16,6 +17,7 @@ export function navbarController(navbarElement) {
     navbarElement.appendChild(buildGreeting(payload.username))
     closeSessionElement.addEventListener("click", () => {
       localStorage.removeItem('token')
+      notification(false, "Vuelve pronto");
       window.location.reload()
     })
     
