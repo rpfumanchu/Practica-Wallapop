@@ -12,6 +12,7 @@ export async function adTags(
   page,
   tag
 ) {
+  
   showSpinner(spinnerElement);
 
   try {
@@ -20,9 +21,9 @@ export async function adTags(
     pagination(payload.maxPage);
 
     const onlyTags = payload.tagstotal
-    .filter((ad) => !!ad.tags)
-    .map((ad) => ad.tags.split(","))
-    .flat();
+      .filter((ad) => !!ad.tags)
+      .map((ad) => ad.tags.split(","))
+      .flat();
 
     const uniqueTagsSet = new Set([...onlyTags]);
     const uniqueTagsArray = [...uniqueTagsSet];

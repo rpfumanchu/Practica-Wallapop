@@ -45,6 +45,7 @@ export async function modifyAdController(adModifyElement, adId) {
     });
 
     try{
+      showSpinner(spinnerElement);
       await modifyAd(newAd, ad.id);
       notification(false, "Anuncio modificado correctamente");
       homePage();

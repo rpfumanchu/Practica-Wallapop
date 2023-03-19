@@ -12,24 +12,28 @@ export function loginController(loginElement, spinnerElement) {
   showSpinner(spinnerElement);
   hideSpinner(spinnerElement);
   loginElement.addEventListener("submit", async (event) => {
+
     event.preventDefault();
 
     const emailElement = loginElement.querySelector("#username");
     const passwordElement = loginElement.querySelector("#password");
 
-    if (isEmailValid(emailElement.value)) {
-      try {
+    showSpinner(spinnerElement);
+
+    try {
+        // Si no es un email válido, lanzo una excepcion para que la capture el catch y muestre la notificación
+        if (!isEmailValid(emailElement.value)) throw { message: "El email no está escrito de forma correcta" };
+        
         const jtw = await loginUser(emailElement.value, passwordElement.value);
         localStorage.setItem("token", jtw);
         notification(false, "Has iniciado sesión");
 
         homePage();
-      } catch (error) {
+    } catch (error) {
+        loginElement.reset();
         notification(true, error.message);
-      }
-    } else if (!isEmailValid(emailElement.value)) {
-      notification(true, "El email no está escrito de forma correcta");
+    } finally {
+      hideSpinner(spinnerElement);
     }
-    loginElement.reset();
   });
 }

@@ -9,8 +9,8 @@ import { hideSpinner, showSpinner } from "../spinner/spinnerController.js";
 //NOTE para que eso no ocurra uso preventDefault()
 
 export function createAdController(createAdElement, spinnerElement) {
-  showSpinner(spinnerElement)
-  hideSpinner(spinnerElement)
+  showSpinner(spinnerElement);
+  hideSpinner(spinnerElement);
   createAdElement.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -23,14 +23,16 @@ export function createAdController(createAdElement, spinnerElement) {
     });
 
     try {
+      showSpinner(spinnerElement);
       await createAd(newAd);
       notification(false, "Anuncio creado correctamente");
 
       homePage();
     } catch (error) {
       notification(true, error.message);
-    } finally {
       createAdElement.reset();
+    } finally {
+      hideSpinner(spinnerElement);
     }
   });
 }

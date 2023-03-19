@@ -31,18 +31,22 @@ export const adDetailController = async (adDetailElement, adId, spinnerElement) 
 
     if (!token) {
       deleteButtonElement.remove();
-      modifyButtonElement.remove()
-      
+      modifyButtonElement.remove();
     } else {
       const userInfo = decodeToken(token);
       
       if (ad.userId === userInfo.userId) {
+
         deleteButtonElement.addEventListener("click", async () => {
 
           try {
             const answer = confirm("¿Seguro que quieres borrar el anuncio?");
+            
             if (answer) {
+              showSpinner(spinnerElement);
+
               await deleteAd(ad.id);
+
               notification(false, "Anuncio borrado correctamente");
               
               homePage();
@@ -50,9 +54,12 @@ export const adDetailController = async (adDetailElement, adId, spinnerElement) 
             
           } catch (error) {
             notification(true, error.message);
+          } finally {
+            hideSpinner(spinnerElement);
           }
         
         });
+
       } else {
         deleteButtonElement.remove();
         modifyButtonElement.remove()

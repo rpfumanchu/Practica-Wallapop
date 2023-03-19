@@ -6,6 +6,10 @@ import { buildNotificationView } from "./notificationView.js";
 
 export function notificationController(notificationsElement) {
   function showMessage(detail) {
+
+    // Muestra el elemento de notificacion por si se hubiese ocultado por otro mensaje
+    notificationsElement.classList.remove("hide");
+
     if (detail.isError) {
       notificationsElement.classList.add("popup-red");
     } else {
@@ -14,15 +18,14 @@ export function notificationController(notificationsElement) {
 
     notificationsElement.innerHTML = buildNotificationView(detail.message);
 
-
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(notificationsElement.classList.add("hide"));
-      }, 3000);
-    });
+    // Oculto el elemento de notificacion despues de X segundos
+    setTimeout(() => {
+      notificationsElement.classList.add("hide");
+    }, 3000);
   }
 
   pubSub.subscribe(pubSub.TOPICS.SHOW_NOTIFICATION, (message) => {
+    // console.log("subscribe", message);
     showMessage(message);
   });
 

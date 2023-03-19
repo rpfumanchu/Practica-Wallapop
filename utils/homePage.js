@@ -1,9 +1,5 @@
 export function homePage() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(
-        window.location = "/"
-      );
-    }, 2000);
-  });
+  setTimeout(() => {
+    window.location = "/"
+  }, 2000);
 }
