@@ -23,6 +23,10 @@ export async function deleteAd(adId) {
       Authorization: `Bearer ${token}`,
     },
   });
+
+  if (!response.ok) {
+    throw new Error("Error borrando anuncio");
+  }
 }
 
 
