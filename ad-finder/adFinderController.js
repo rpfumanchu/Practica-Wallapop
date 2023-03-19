@@ -14,7 +14,7 @@ export async function adFindController(
     drawList(adFindElement, adTotal);
     addInputListenerToFilter();
   } catch (error) {
-    notification(true, "Error cargando buscador");
+    
   }
 
   function addInputListenerToFilter() {

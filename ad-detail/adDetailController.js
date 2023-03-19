@@ -42,12 +42,13 @@ export const adDetailController = async (adDetailElement, adId, spinnerElement) 
           if (answer) {
             await deleteAd(ad.id);
             notification(false, "Anuncio borrado correctamente");
-            alert("navegando a la homepage");
+            
             homePage();
           }
         });
       } else {
         deleteButtonElement.remove();
+        modifyButtonElement.remove()
         
       }
     }

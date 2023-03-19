@@ -4,6 +4,6 @@ export function homePage() {
       resolve(
         window.location = "/"
       );
-    }, 1000);
+    }, 2000);
   });
 }

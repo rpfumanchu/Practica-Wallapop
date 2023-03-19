@@ -3,7 +3,9 @@ import { navbarController } from "../navbar/navbarController.js";
 import { createAdController } from "./createAdController.js";
 import { titleController } from "../title/titleController.js";
 import { footerController } from "../footer/footerController.js";
+import { spinnerController } from "../spinner/spinnerController.js";
 
+const spinnerElement = document.querySelector("#spinner")
 const navbarElement = document.querySelector(".navbar");
 const notificationsElement = document.querySelector(".notifications");
 const titleElement = document.querySelector("#title");
@@ -17,9 +19,10 @@ if (!token) {
   window.location = "/";
 } else {
   const createAdElement = document.querySelector("#createAdForm");
-  createAdController(createAdElement);
+  createAdController(createAdElement, spinnerElement);
 }
 
+spinnerController(spinnerElement)
 navbarController(navbarElement);
 notificationController(notificationsElement);
 titleController(titleElement);
