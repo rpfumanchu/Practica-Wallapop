@@ -1,5 +1,7 @@
 # WallaPop
 
+# Contraseña por defecto 123123
+
 ## descargar Sparrest y clonar el repo
 https://github.com/kasappeal/sparrest.js
 
