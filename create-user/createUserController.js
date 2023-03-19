@@ -39,6 +39,7 @@ export function singupController(createUserElement, spinnerElement) {
 
     } catch (error) {
       notification(false, error.message);
+      createUserElement.reset();
     }
     finally {
       hideSpinner(spinnerElement)

@@ -7,9 +7,11 @@ export function buildAdDetail(ad) {
   return `
   <div class="ad-detail">
   <div class="ad">
-    <p class="text"> articulo ${ad.name} ${ad.state} ${ad.price} Euros</p>
+    <p class="text"> articulo ${ad.name}</p>
+    <p class="text">${ad.state} ${ad.price} Euros</p>
     <img class="img" src="${ad.img}" alt="imagenes anuncios">
-    <p class="text">${ad.stateuse} ${ad.description}</p>
+    <p class="text">${ad.stateuse}</p>
+    <p class="text">${ad.description}</p>
     <span class="span">${ad.tags}</span>
     <div>
       <button class="delete-button" id="deleteAd">Borrar Anuncio</button>
