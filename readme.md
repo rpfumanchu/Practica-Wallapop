@@ -19,7 +19,7 @@ npm install
 npm start
 ```
 
-### Ahora en el repo PRACTICA-WALLAPOP valla al index.html de la carpeta raiz y ejecute live server.
+### Ahora en el repo PRACTICA-WALLAPOP vaya al index.html de la carpeta raíz y ejecute live server.
 
 ### Puedes usar live server como una extension de chrome.
 
