@@ -4,7 +4,7 @@ import { footerController } from "./footer/footerController.js";
 import { navbarController } from "./navbar/navbarController.js";
 import { notificationController } from "./notifications/notificationController.js";
 import { paginationButton } from "./pagination-buttons/paginationBottonController.js";
-import {spinnerController, hideSpinner} from "./spinner/spinnerController.js"
+import { spinnerController } from "./spinner/spinnerController.js"
 import { adFindController } from "./ad-finder/adFinderController.js";
 
 const spinnerElement = document.querySelector("#spinner");
@@ -18,7 +18,7 @@ const adListElement = document.querySelector(".adGrid")
 
 //const showMessage = notificationController(notificationElement);
 spinnerController(spinnerElement)
-hideSpinner(spinnerElement)
+//hideSpinner(spinnerElement)
 notificationController(notificationElement)
 navbarController(navbarElement)
 titleController(titleElement)

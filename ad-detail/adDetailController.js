@@ -3,9 +3,13 @@ import { buildAdDetail } from "./adDetailView.js";
 import { decodeToken } from "../utils/decodeToken.js";
 import { homePage } from "../utils/homePage.js";
 import { notification } from "../utils/notifications.js";
+import { showSpinner,  hideSpinner} from "../spinner/spinnerController.js";
 
 
-export const adDetailController = async (adDetailElement, adId) => {
+
+export const adDetailController = async (adDetailElement, adId, spinnerElement) => {
+  showSpinner(spinnerElement)
+
   try {
     const ad = await getAdDetail(adId);
     
@@ -15,6 +19,8 @@ export const adDetailController = async (adDetailElement, adId) => {
     notification(false, "Detalle del anuncio se cargo correctamente");
   } catch (error) {
     notification(true, error.message);
+  } finally {
+    hideSpinner(spinnerElement)
   }
 
   //DONE Añado evento click al boton de borrar anuncio
@@ -25,6 +31,7 @@ export const adDetailController = async (adDetailElement, adId) => {
 
     if (!token) {
       deleteButtonElement.remove();
+      modifyButtonElement.remove()
       
     } else {
       const userInfo = decodeToken(token);
@@ -41,7 +48,7 @@ export const adDetailController = async (adDetailElement, adId) => {
         });
       } else {
         deleteButtonElement.remove();
-        modifyButtonElement.remove()
+        
       }
     }
   }

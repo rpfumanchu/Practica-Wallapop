@@ -1,8 +1,12 @@
 import { buildSpinnerView } from "./spinnerView.js";
 
 export function spinnerController(spinnerElement) {
-  spinnerElement.innerHTML = buildSpinnerView();
+  spinnerElement.innerHTML = buildSpinnerView("Cargando...");
   
+}
+
+export function showSpinner(spinnerElement) {
+  spinnerElement.classList.remove("hide");
 }
 
 export function hideSpinner(spinnerElement) {

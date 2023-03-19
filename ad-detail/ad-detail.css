@@ -1,18 +1,3 @@
-/* .ad {
-  border: solid 1px lightgray;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-
-.ad .ad-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
-/* body {
-  background-image: url("https://thumbs.dreamstime.com/z/fondo-con-los-iconos-coloridos-de-las-compras-venta-al-por-menor-pago-en-l%C3%ADnea-106340894.jpg");
-} */
 
 .ad-detail {
   display: flex;
@@ -21,8 +6,6 @@
   text-align: center;
   padding-top: 90px;
   margin-bottom: 10px;
-
-
 }
 
 .ad-detail .ad {
@@ -30,11 +13,6 @@
   border: 2px solid red;
   background-color: white;
 }
-
-/* .adGrid .ad .ad-ad {
-  display: flex;
-  flex-wrap: nowrap;
-} */
 
 .ad-detail .ad .img {
   justify-items: center;
@@ -78,7 +56,6 @@
   padding: 8px 12px;
   margin-top: 10px;
   margin-bottom: 10px;
-
 }
 
 #updateAd {

@@ -4,7 +4,6 @@ import { createAdController } from "./createAdController.js";
 import { titleController } from "../title/titleController.js";
 import { footerController } from "../footer/footerController.js";
 
-
 const navbarElement = document.querySelector(".navbar");
 const notificationsElement = document.querySelector(".notifications");
 const titleElement = document.querySelector("#title");
@@ -23,6 +22,5 @@ if (!token) {
 
 navbarController(navbarElement);
 notificationController(notificationsElement);
-titleController(titleElement)
-footerController(footerElement)
-
+titleController(titleElement);
+footerController(footerElement);

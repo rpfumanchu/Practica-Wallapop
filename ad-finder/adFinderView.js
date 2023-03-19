@@ -4,13 +4,13 @@ export function drawList(adFindElement,  adTotal) {
   //const newAdElement = document.createElement("div");
  
   adFindElement.innerHTML = `
-    <div class="find">
-        <label for="filter_list_ad"></label>
-        <input placeholder="Buscar anuncio..." id="filter_list_ad" />
-    </div>
-    <div class="ad-find">
-        ${createListItems(adTotal)}
-    </div>`;
+  <div class="find">
+    <label for="filter_list_ad"></label>
+    <input placeholder="Buscar anuncio..." id="filter_list_ad" />
+  </div>
+  <div class="ad-find">
+    ${createListItems(adTotal)}
+  </div>`;
 }
 
 function createListItems(adTotal) {

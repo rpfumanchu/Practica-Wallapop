@@ -85,6 +85,10 @@
   animation-delay: .37s;
 }
 
+.hide {
+  display: none;
+}
+
 @keyframes salto {
   from {
     transform: scaleX(1.25);

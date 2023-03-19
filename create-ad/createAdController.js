@@ -15,7 +15,7 @@ export function createAdController(createAdElement) {
 
     const newAd = {};
     formData.forEach((value, key) => {
-      newAd[key] = value ;
+      newAd[key] = value;
     });
 
     try {
