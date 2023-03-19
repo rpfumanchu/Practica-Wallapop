@@ -16,9 +16,8 @@ const footerElement = document.querySelector("#footer")
 const adFinderElement = document.querySelector("#find")
 const adListElement = document.querySelector(".adGrid")
 
-//const showMessage = notificationController(notificationElement);
+
 spinnerController(spinnerElement)
-//hideSpinner(spinnerElement)
 notificationController(notificationElement)
 navbarController(navbarElement)
 titleController(titleElement)
@@ -35,7 +34,3 @@ if (!page) {
   adFindController(adFinderElement, adListElement, paginationButtonElement);
 }
 
-// adListElement.addEventListener('newNotification', (event) => {
-//   console.log('He recibido el evento!!!! ', event.detail.message);
-//   showMessage(event.detail.message)
-// })
