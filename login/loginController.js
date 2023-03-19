@@ -9,8 +9,8 @@ import { showSpinner, hideSpinner } from "../spinner/spinnerController.js";
 //DONE manejar con pubsub distintos errores y exito
 
 export function loginController(loginElement, spinnerElement) {
-  showSpinner(spinnerElement)
-  hideSpinner(spinnerElement)
+  showSpinner(spinnerElement);
+  hideSpinner(spinnerElement);
   loginElement.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -22,16 +22,14 @@ export function loginController(loginElement, spinnerElement) {
         const jtw = await loginUser(emailElement.value, passwordElement.value);
         localStorage.setItem("token", jtw);
         notification(false, "Has iniciado sesión");
-        
+
         homePage();
       } catch (error) {
         notification(true, error.message);
       }
-    } else if (!isEmailValid(emailElement.value)){
+    } else if (!isEmailValid(emailElement.value)) {
       notification(true, "El email no está escrito de forma correcta");
     }
     loginElement.reset();
-  
-
   });
 }

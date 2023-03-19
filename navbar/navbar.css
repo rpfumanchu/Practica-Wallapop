@@ -42,7 +42,6 @@ h4 {
 
 .greet-user {
   display: flex;
-  
   position: absolute;
   left: 300px;
   font-size: 25px;
