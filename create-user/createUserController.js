@@ -23,18 +23,22 @@ export function singupController(createUserElement, spinnerElement) {
     showSpinner(spinnerElement)
 
     try {
+      
+      if (isEmailValid(emailElement.value) && isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
+        await createUser(emailElement.value, passwordElement.value);
+        
+        notification(false, "Usuario creado con exito");
+        
+        homePage();
+      } else if (!isEmailValid(emailElement.value)){
+        notification(true, "El email no está escrito de forma correcta");
+        createUserElement.reset();
+      } else {
+        createUserElement.reset();
+      }
 
-      if (!isEmailValid(emailElement.value)) throw { message: "El email no está escrito de forma correcta" };
-      if (!isPasswordValid(passwordElement.value, passwordConfirmElement.value)) throw { message: "Las contraseñas no coinciden" };
-
-      await createUser(emailElement.value, passwordElement.value);
-
-      notification(false, "Usuario creado con éxito");
-
-      homePage();
     } catch (error) {
       notification(false, error.message);
-      createUserElement.reset();
     }
     finally {
       hideSpinner(spinnerElement)
@@ -43,7 +47,12 @@ export function singupController(createUserElement, spinnerElement) {
   });
 
   function isPasswordValid(password, passwordConfirmation) {
-    return password !== passwordConfirmation;
+    if (password !== passwordConfirmation) {
+      notification(true, "Las contraseñas no son iguales");
+
+      return false;
+    }
+    return true;
   }
 }
 

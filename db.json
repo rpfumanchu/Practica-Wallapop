@@ -10,6 +10,7 @@
       "password": "$2b$10$McoT/2kMC.J1v6YtIPB3MOOF5qSq9qDFm/rxhR1OTrD9sO.OL/NCa",
       "id": 2
     }
+    
   ],
   "ads": [
     {
@@ -121,16 +122,16 @@
       "id": 9
     },
     {
+      "id": 10,
+      "updatedAt": "2023-03-17T23:38:40.489Z",
+      "userId": 2,
       "name": "Escritorio",
       "state": "Compro",
-      "price": "120",
+      "price": "90",
       "tags": "work",
-      "stateuse": "buen estado",
+      "stateuse": "nuevo",
       "description": "Compro mesa en buen estado, el ancho máximo no puede superar el 1.10 metros",
-      "img": "https://img.furniture1.eu/v7/_im_/detailed/2947/2947616.jpg?w=900&h=675&p=fw",
-      "userId": 2,
-      "updatedAt": "2023-03-14T11:40:44.390Z",
-      "id": 10
+      "img": "https://img.furniture1.eu/v7/_im_/detailed/2947/2947616.jpg?w=900&h=675&p=fw"
     },
     {
       "name": "Renault",
@@ -167,18 +168,6 @@
       "userId": 1,
       "updatedAt": "2023-03-14T11:47:02.586Z",
       "id": 13
-    },
-    {
-      "name": "Cascos",
-      "state": "Venta",
-      "price": "30",
-      "tags": "lifestyle",
-      "stateuse": "buen estado",
-      "description": "Poco uso, ideal para consolas y pc.",
-      "img": "",
-      "userId": 1,
-      "updatedAt": "2023-03-14T11:48:38.126Z",
-      "id": 14
-    }
+    }  
   ]
 }

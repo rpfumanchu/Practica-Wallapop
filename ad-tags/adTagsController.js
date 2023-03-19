@@ -20,21 +20,15 @@ export async function adTags(
 
     pagination(payload.maxPage);
 
-    const onlyTags = payload.tagstotal
-      .filter((ad) => !!ad.tags)
-      .map((ad) => ad.tags.split(","))
-      .flat();
+    const onlyTags = payload.tagstotal.filter((ad) => !!ad.tags).map((ad) => ad.tags.split(",")).flat();
 
     const uniqueTagsSet = new Set([...onlyTags]);
     const uniqueTagsArray = [...uniqueTagsSet];
 
-    drawAds(payload, adListElement);
     drawTags(uniqueTagsArray, page, adTagsElement);
+    drawAds(payload, adListElement);
 
-    notification(
-      false,
-      "Los anuncios clasificados por tags se cargaron correctamente"
-    );
+    notification(false,"Los anuncios clasificados por tags se cargaron correctamente");
   } catch (error) {
     notification(true, "Error cargando los anuncios clasificados por tags");
   } finally {

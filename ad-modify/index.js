@@ -30,7 +30,7 @@ if (!token) {
   window.location = "/";
 } else {
   const adModifyElement = document.querySelector("#modifyAdForm");
-  modifyAdController(adModifyElement, adId)
+  modifyAdController(adModifyElement, adId, spinnerElement)
 }
 
 

@@ -2,8 +2,10 @@ import { decodeToken } from "../utils/decodeToken.js";
 import { modifyAd, getAdModifyId } from "./adModify.js";
 import { homePage } from "../utils/homePage.js";
 import { notification } from "../utils/notifications.js";
+import { hideSpinner, showSpinner } from "../spinner/spinnerController.js";
 
-export async function modifyAdController(adModifyElement, adId) {
+
+export async function modifyAdController(adModifyElement, adId, spinnerElement) {
   
   const token = localStorage.getItem("token");
   const userInfo = decodeToken(token);
@@ -51,6 +53,8 @@ export async function modifyAdController(adModifyElement, adId) {
       homePage();
     } catch (error) {
       notification(true, error.message);
+    } finally {
+      hideSpinner(spinnerElement)
     }
 
   });

@@ -21,17 +21,23 @@ export function loginController(loginElement, spinnerElement) {
     showSpinner(spinnerElement);
 
     try {
-        // Si no es un email válido, lanzo una excepcion para que la capture el catch y muestre la notificación
-        if (!isEmailValid(emailElement.value)) throw { message: "El email no está escrito de forma correcta" };
-        
-        const jtw = await loginUser(emailElement.value, passwordElement.value);
-        localStorage.setItem("token", jtw);
-        notification(false, "Has iniciado sesión");
+        //NOTE Si no es un email válido, lanzo una excepcion para que la capture el catch y muestre la notificación
+        if (isEmailValid(emailElement.value)) {
 
-        homePage();
-    } catch (error) {
-        loginElement.reset();
-        notification(true, error.message);
+          const jtw = await loginUser(emailElement.value, passwordElement.value);
+          localStorage.setItem("token", jtw);
+          notification(false, "Has iniciado sesión");
+        
+          homePage();
+
+        } else if (!isEmailValid(emailElement.value)){
+          notification(true, "El email no está escrito de forma correcta");
+          loginElement.reset();
+        }
+        
+    } catch (error) {  
+      notification(true, error.message);
+      loginElement.reset();
     } finally {
       hideSpinner(spinnerElement);
     }
